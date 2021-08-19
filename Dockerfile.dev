@@ -1,0 +1,29 @@
+# React-test-application
+# https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11437058#notes
+
+FROM node:alpine
+
+#
+# because of user-rights issues we replace:
+#
+#WORKDIR '/app'
+#
+#COPY package.json .
+#RUN npm install
+#
+#COPY . . 
+#
+# with:
+#
+
+USER node
+ 
+RUN mkdir -p /home/node/app
+WORKDIR /home/node/app
+ 
+COPY --chown=node:node ./package.json ./
+RUN npm install
+COPY --chown=node:node ./ ./
+#
+
+CMD ["npm", "run", "start"]
