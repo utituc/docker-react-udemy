@@ -10,7 +10,8 @@ function App() {
           Edit <code>src/App.js</code> and save to reload.<br/>
           Uwe was here!<br/>
           Surprised?<br/>
-          Or not surprised?
+          Or not surprised?<br/>
+          This was changed in a feature-branch (2021-08-20)
         </p>
         <a
           className="App-link"
