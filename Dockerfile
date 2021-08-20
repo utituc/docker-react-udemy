@@ -18,6 +18,9 @@ RUN npm run build
 
 FROM nginx
 
+# EXPOSE is used/needed e.g. by AWS/elasticbeanstalk
+EXPOSE 80
+
 COPY --from=builder /home/node/app/build /usr/share/nginx/html
 # --from=builder references the phase before
 # the target path /usr/share... can be found in the nginx-docs
