@@ -8,3 +8,20 @@ before_install:
 
 script:
   - docker run -e CI=true utituc/docker-react-udemy npm run test 
+
+#
+# more options for AWS/automatic deployment by travis-ci
+#
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: <region from EBS-URL>
+#   app: <name of app in EBS>
+#   env: <name of env in EBS>
+#   bucket_name: <to be found in S3/AWS>
+#   bucket_path: <to be found in S3, prob. the name of the app>
+#   on:
+#     branch: master # only auto-deploy if the master-branch is updated
+#   access_key_id: $<name of chosen env variable in travis>
+#   secret_access_key:
+#     secure: "$<name of chosen env variable in travis>"
